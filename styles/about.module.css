@@ -1,0 +1,39 @@
+.aboutSection {
+    padding: 5rem 2rem;
+    background-color: #f3f4f6; /* Tailwind's gray-100 */
+    transition: background-color 0.3s ease;
+  }
+  
+  .aboutSection.dark {
+    background-color: #1a202c; /* Tailwind's gray-900 */
+  }
+  
+  .aboutWrapper {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .aboutTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #1f2937; /* Tailwind's gray-800 */
+    transition: color 0.3s ease;
+  }
+  
+  .dark .aboutTitle {
+    color: #ffffff;
+  }
+  
+  .aboutText {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4b5563; /* Tailwind's gray-600 */
+    transition: color 0.3s ease;
+  }
+  
+  .dark .aboutText {
+    color: #d1d5db; /* Tailwind's gray-300 */
+  }
+  

@@ -1,0 +1,84 @@
+.projectsSection {
+    padding: 5rem 2rem;
+    background-color: #f3f4f6; /* Tailwind's gray-100 */
+    transition: background-color 0.3s ease;
+  }
+  
+  .projectsSection.dark {
+    background-color: #1a202c; /* Tailwind's gray-900 */
+  }
+  
+  .projectsWrapper {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  
+  .projectsTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1f2937; /* Tailwind's gray-800 */
+    transition: color 0.3s ease;
+  }
+  
+  .dark .projectsTitle {
+    color: #ffffff;
+  }
+  
+  .projectCard {
+    border: 1px solid #e5e7eb; /* Tailwind's gray-200 */
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .projectCard.dark {
+    background-color: #2d3748; /* Tailwind's gray-700 */
+    border-color: #4a5568; /* Tailwind's gray-600 */
+  }
+  
+  .projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .projectCard.dark:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .projectTitle {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937; /* Tailwind's gray-800 */
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+  
+  .dark .projectTitle {
+    color: #ffffff;
+  }
+  
+  .projectDescription {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #4b5563; /* Tailwind's gray-600 */
+    transition: color 0.3s ease;
+  }
+  
+  .dark .projectDescription {
+    color: #d1d5db; /* Tailwind's gray-300 */
+  }
+  
+  .projectLink {
+    text-decoration: underline;
+    color: #3182ce; /* Tailwind's blue-600 */
+    transition: color 0.3s ease;
+  }
+  
+  .projectLink:hover {
+    color: #2b6cb0; /* Tailwind's blue-700 */
+  }
+  

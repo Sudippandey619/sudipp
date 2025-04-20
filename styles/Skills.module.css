@@ -1,0 +1,94 @@
+.skillsSection {
+    min-height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #f9fafb; /* Light background */
+    transition: background-color 0.3s ease;
+  }
+  
+  .skillsSection.dark {
+    background-color: #2d3748; /* Dark background */
+  }
+  
+  .skillsTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+  }
+  
+  .skillsTitle.dark {
+    color: #edf2f7; /* Light color for dark mode */
+  }
+  
+  .skillCard {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+    max-width: 220px; /* Further reduced width of each skill card */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .skillCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  .skillName {
+    font-size: 1.2rem; /* Increased size */
+    font-weight: 600;
+    color: #2d3748; /* Dark text */
+    padding-bottom: 0.5rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .skillLevel {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #276ee9; /* Slightly lighter gray */
+  }
+  
+  .skillBarWrapper {
+    width: 100%;
+    background-color: #edf2f7; /* Light gray background */
+    border-radius: 9999px;
+    height: 10px; /* Taller bar for a modern feel */
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  
+  .skillBar {
+    background-image: linear-gradient(45deg, #38b2ac, #63b3ed); /* Gradient for loading bars */
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.5s ease;
+  }
+  
+  .skillBar.dark {
+    background-image: linear-gradient(45deg, #63b3ed, #38b2ac); /* Gradient for dark mode */
+  }
+  
+  /* Add bottom shadow to text containers */
+  .skillTextWrapper {
+    position: relative;
+  }
+  
+  .skillTextWrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle shadow under the text */
+  }
+  

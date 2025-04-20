@@ -4,17 +4,42 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "postinstall": "flowbite-react patch && flowbite-react register"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@next/font": "^14.2.15",
+    "@tanstack/react-query": "^5.74.4",
+    "emailjs-com": "^3.2.0",
+    "flowbite": "^3.1.2",
+    "flowbite-react": "^0.11.7",
+    "framer-motion": "^12.7.4",
     "next": "latest",
+    "next-themes": "^0.4.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5",
+    "react-tooltip": "^5.28.1",
+    "swr": "^2.3.3"
   },
   "devDependencies": {
-    "@types/node": "^12.12.21",
-    "@types/react": "^17.0.2",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "^22.14.1",
+    "@types/react": "^17.0.85",
     "@types/react-dom": "^17.0.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
     "typescript": "^4.8.3"
-  }
+  },
+  "name": "sudippandey-portfolio",
+  "version": "1.0.0",
+  "description": "This is a really simple project that shows the usage of Next.js with TypeScript.",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

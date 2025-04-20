@@ -1,0 +1,109 @@
+/* styles/navbar.module.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.navbar.dark {
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a90e2;
+  transition: color 0.3s ease;
+}
+
+.navbar.dark h1 {
+  color: #ffffff;
+}
+
+.navbar a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #333333; /* Dark background on hover */
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(45deg, #ff6e7f, #d77e9e); /* Gradient on hover */
+  border-radius: 12px; /* Rounded corners */
+  transition: all 0.4s ease; /* Smooth transition */
+}
+
+.navbar.dark a {
+  color: #d1d1d1;
+}
+
+.navbar.dark a:hover {
+  background-color: #444444;
+  color: #ffffff;
+  background-image: linear-gradient(45deg, #ff6e7f, #d77e9e);
+}
+
+.navbar .theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.dark .theme-toggle {
+  background-color: #444444;
+}
+
+.navbar .theme-toggle:hover {
+  cursor: pointer;
+  background-color: #f8c93b;
+}
+
+.navbar.dark .theme-toggle:hover {
+  background-color: #f8c93b;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar h1 {
+    margin-bottom: 1rem;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar .theme-toggle {
+    margin-top: 1rem;
+  }
+}
