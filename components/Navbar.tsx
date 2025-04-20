@@ -33,7 +33,7 @@ const Navbar = () => {
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           className={styles['theme-toggle']}
         >
-          {theme === 'dark' ? <FaSun size={15} /> : <FaMoon size={15} />}
+          {/* {theme === 'dark' ? <FaSun size={15} /> : <FaMoon size={15} />} */}
         </button>
       </div>
     </nav>
