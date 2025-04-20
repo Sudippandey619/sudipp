@@ -16,7 +16,8 @@ const ThemeToggle = () => {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-full transition-colors bg-gray-200 dark:bg-gray-700 text-yellow-500 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600"
     >
-      {theme === 'dark' ? <FaSun /> : <FaMoon />}
+      Dark
+      {/* {theme === 'dark' ? <FaSun /> : <FaMoon />} */}
     </button>
   );
 };
