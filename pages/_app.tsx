@@ -2,15 +2,18 @@
 // import { ThemeProvider } from 'next-themes';
 import '../styles/globals.css';  
 import { AppProps } from 'next/app';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
+import FlyingRocket from '../sections/Flyingrocket';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <main className="pt-16"> {/* Padding top to avoid content under fixed navbar */}
           <Component {...pageProps} />
+          <FlyingRocket />
+
         </main>
       </div>
    
@@ -18,3 +21,4 @@ function App({ Component, pageProps }: AppProps) {
 }
 
 export default App;
+

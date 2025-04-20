@@ -1,39 +1,47 @@
-// Navbar.tsx
-import { useTheme } from 'next-themes';
+// components/Navbar.tsx
 import { useEffect, useState } from 'react';
-import type { IconType } from 'react-icons';
-import { FaSun as RawFaSun, FaMoon as RawFaMoon } from 'react-icons/fa';
 import Link from 'next/link';
-import styles from '../styles/navbar.module.css'; // Import CSS Module
-
-const FaSun: IconType = RawFaSun;
-const FaMoon: IconType = RawFaMoon;
+import styles from '../styles/navbar.module.css';
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  // Load from localStorage
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    }
+  }, []);
 
-  if (!mounted) return null;
+ const toggleTheme = () => {
+  const isDark = document.documentElement.classList.contains('dark');
+  document.documentElement.classList.toggle('dark', !isDark);
+};
 
   return (
-    <nav className={`${styles.navbar} ${theme === 'dark' ? 'dark' : ''}`}>
-      <Link href="/">
-        <h1>Sudip</h1>
-      </Link>
+    <nav className={`${styles.navbar}`}>
+      <div className={styles.logo}>
+        <Link href="/" legacyBehavior>
+          <a style={{ textDecoration: 'none' }}>
+            <h1>Sudip</h1>
+          </a>
+        </Link>
+      </div>
 
-      <div className="flex items-center gap-6">
-        <Link href="#about" className="text-purple-700 dark:text-purple-300 hover:underline">About</Link>
-        <Link href="#projects" className="text-purple-700 dark:text-purple-300 hover:underline">Projects</Link>
-        <Link href="#skills" className="text-purple-700 dark:text-purple-300 hover:underline">Skills</Link>
-        <Link href="#contact" className="text-purple-700 dark:text-purple-300 hover:underline">Contact</Link>
-        
+      <div className={styles.links}>
+        <Link href="#about" className={styles.navLink}>About</Link>
+        <Link href="#projects" className={styles.navLink}>Projects</Link>
+        <Link href="#skills" className={styles.navLink}>Skills</Link>
+        <Link href="#contact" className={styles.navLink}>Contact</Link>
+
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className={styles['theme-toggle']}
+          onClick={toggleTheme}
+          className={styles.themeToggle}
+          aria-label="Toggle Theme"
         >
-          {/* {theme === 'dark' ? <FaSun size={15} /> : <FaMoon size={15} />} */}
+          {isDarkMode ? '☀️' : '🌙'}
         </button>
       </div>
     </nav>
