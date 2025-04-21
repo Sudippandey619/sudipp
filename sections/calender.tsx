@@ -4,8 +4,8 @@ import 'react-calendar/dist/Calendar.css'; // Import the default CSS for calenda
 import { motion } from 'framer-motion'; // For animations
 
 const CalendarWithTime = () => {
-  const [date, setDate] = useState<Date | null>(new Date()); // state for the selected date
-  const [currentTime, setCurrentTime] = useState<string>(''); // state for live clock
+  const [date, setDate] = useState<Date | [Date, Date] | null>(new Date()); // State for the selected date (single date or range)
+  const [currentTime, setCurrentTime] = useState<string>(''); // State for live clock
 
   // Update the live clock every second
   useEffect(() => {
@@ -13,8 +13,13 @@ const CalendarWithTime = () => {
       const time = new Date().toLocaleTimeString(); // Get current time in HH:MM:SS format
       setCurrentTime(time);
     }, 1000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
+
+  // Handle date changes, including date range
+  const handleDateChange = (newDate: Date | [Date, Date]) => {
+    setDate(newDate);
+  };
 
   return (
     <motion.div
@@ -31,8 +36,8 @@ const CalendarWithTime = () => {
         transition={{ type: "spring", stiffness: 100, damping: 25 }}
       >
         <Calendar
-          onChange={setDate} // Updates the selected date when clicked
-          value={date} // Displays the current selected date
+          onChange={handleDateChange} // Updates the selected date when clicked
+          value={date} // Displays the current selected date or range
         />
       </motion.div>
 

@@ -54,13 +54,13 @@ const Contact = () => {
 
           <h3 className={styles.infoBoxTitle}>Connect with me</h3>
           <div className={styles.socialIcons}>
-            <motion.a whileHover={{ scale: 1.1 }} href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <motion.a whileHover={{ scale: 1.1 }} href="https://www.instagram.com/sudip_pandey_0_0/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>
             </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <motion.a whileHover={{ scale: 1.1 }} href="https://www.facebook.com/sudip.pandey.931696/?rdid=mzdHAMR9qBIFOyA9" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook"></i>
             </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+            <motion.a whileHover={{ scale: 1.1 }} href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-whatsapp"></i>
             </motion.a>
           </div>
