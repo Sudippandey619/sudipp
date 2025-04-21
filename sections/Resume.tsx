@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/resume.module.css';
+import styles from '../styles/Resume.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
