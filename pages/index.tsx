@@ -3,10 +3,10 @@ import Navbar from '../components/Navbar';  // Assuming Navbar is a component
 import Hero from '../sections/Hero';  // Assuming Hero is a section component
 import About from '../sections/About';  // Assuming About is a section component
 import Projects from '../sections/Projects';  // Assuming Projects is a section component
-import Skills from '../sections/skills';  // Assuming Skills is a section component
-import Resume from '../sections/resume';  // Assuming Resume is a section component
+import Skills from '../sections/Skills';  // Assuming Skills is a section component
+import Resume from '../sections/Resume';  // Assuming Resume is a section component
 import Blog from '../sections/Blog';  // Assuming Blog is a section component
-import Contact from '../sections/Contact';  // Assuming Contact is a section component
+import Contact from '../sections/contact';  // Assuming Contact is a section component
 
 const HomePage = () => {
   return (
