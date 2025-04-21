@@ -40,8 +40,11 @@ const Contact = () => {
   return (
     <section id="contact" className={`${styles.contactSection} dark:${styles.dark}`}>
       <ToastContainer />
+      
+      {/* Contact Me Heading */}
       <h2 className={styles.heading}>Contact Me</h2>
 
+      {/* Contact Form Section */}
       <div className={`${styles.formContainer} dark:${styles.dark}`}>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -90,6 +93,31 @@ const Contact = () => {
             {loading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
+      </div>
+
+      {/* Get in Touch Section */}
+      <div className={styles.contactInfoBox}>
+        <h3>Get in Touch</h3>
+        <div className={styles.contactInfo}>
+          <a href="tel:+9745348929" className={styles.contactLink}>📞 Call</a>
+          <a href="mailto:sudippandey619@example.com" className={styles.contactLink}>📧 Email</a>
+        </div>
+      </div>
+
+      {/* Social Media Links */}
+      <div className={styles.socialLinksBox}>
+        <h3>Connect with me</h3>
+        <div className={styles.socialLinks}>
+          <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram instagram"></i> {/* Instagram Icon */}
+          </a>
+          <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook facebook"></i> {/* Facebook Icon */}
+          </a>
+          <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-whatsapp whatsapp"></i> {/* WhatsApp Icon */}
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -2,6 +2,8 @@
 // import { ThemeProvider } from 'next-themes';
 import '../styles/globals.css';  
 import { AppProps } from 'next/app';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 // import Navbar from '../components/Navbar';
 import FlyingRocket from '../sections/Flyingrocket';
 

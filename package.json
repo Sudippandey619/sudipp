@@ -8,6 +8,7 @@
     "postinstall": "flowbite-react patch && flowbite-react register"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@next/font": "^14.2.15",
@@ -21,6 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
     "react-toastify": "^11.0.5",
     "react-tooltip": "^5.28.1",
     "swr": "^2.3.3"

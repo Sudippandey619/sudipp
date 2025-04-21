@@ -1,82 +1,154 @@
-/* Contact.module.css */
-
+/* Contact Section */
 .contactSection {
-    min-height: 100vh;
-    background-color: #ffffff;
-    color: #1a202c;
-    padding: 4rem 1rem;
-  }
-  
-  .contactSection.dark {
-    background-color: #1a202c;
-    color: #f7fafc;
-  }
-  
-  .heading {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .formContainer {
-    max-width: 640px;
-    margin: 0 auto;
-    background-color: #f3f4f6;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-  }
-  
-  .formContainer.dark {
-    background-color: #1f2937;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-weight: 500;
-  }
-  
-  .input,
-  .textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid #d1d5db;
-    background-color: #ffffff;
-  }
-  
-  .input.dark,
-  .textarea.dark {
-    background-color: #374151;
-    border-color: #4b5563;
-    color: #f3f4f6;
-  }
-  
-  .button {
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 0.75rem;
-    color: #ffffff;
-    background-color: #2563eb;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #1e40af;
-  }
-  
-  .button:disabled {
-    background-color: #9ca3af;
-    cursor: not-allowed;
-  }
-  
-  .errorMessage {
-    color: #dc2626;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-  }
-  
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #1a202c;
+  padding: 4rem 1rem;
+}
+
+.contactSection.dark {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+
+/* Contact Info Box */
+.contactInfoBox {
+  margin-top: 2rem;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.contactInfoBox.dark {
+  background-color: #1f2937;
+}
+
+/* Contact Info Links */
+.contactInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.contactLink {
+  font-size: 1.5rem;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #1e40af;
+}
+
+/* Form Section */
+.formContainer {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.formContainer.dark {
+  background-color: #1f2937;
+}
+
+/* Labels and Inputs */
+.label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+}
+
+.input.dark,
+.textarea.dark {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  background-color: #2563eb;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1e40af;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.errorMessage {
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Social Links Section */
+.socialLinksBox {
+  margin-top: 2rem;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.socialLinksBox.dark {
+  background-color: #1f2937;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: left;
+  gap: 5rem;
+  margin-top: 1rem;
+}
+
+.socialLinks a {
+  font-size: 2rem;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #1e40af;
+  transform: scale(1.1);
+}
+
+/* Dark Mode */
+.socialLinks a.dark {
+  color: #f7fafc;
+}
+
+.socialLinks a.dark:hover {
+  color: #93c5fd;
+  transform: scale(1.1);
+}
+
+.socialLinks i {
+  margin-right: 0.5rem;
+}

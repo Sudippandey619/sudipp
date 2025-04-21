@@ -1,88 +1,135 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import styles from '../styles/skills.module.css'; // Import the CSS module
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import styles from '../styles/skills.module.css';
 
 const skills = [
-  { name: 'HTML', level: 90 },
-  { name: 'CSS', level: 85 },
-  { name: 'JavaScript', level: 80 },
-  { name: 'React', level: 75 },
-  { name: 'Next.js', level: 70 },
+  { name: 'HTML', logo: '/skills/html.png', percent: 95 },
+  { name: 'CSS', logo: '/skills/css.png', percent: 90 },
+  { name: 'JavaScript', logo: '/skills/js.png', percent: 85 },
+  { name: 'React', logo: '/skills/react.png', percent: 80 },
+  { name: 'Next.js', logo: '/skills/nextjs.png', percent: 75 },
+  { name: 'Tailwind CSS', logo: '/skills/tailwind.png', percent: 85 },
+  { name: 'MongoDB', logo: '/skills/mongodb.png', percent: 70 },
+  { name: 'C', logo: '/skills/c.png', percent: 85 },
+  { name: 'C++', logo: '/skills/cpp.png', percent: 80 },
+  { name: 'Python', logo: '/skills/Py.png', percent: 88 },
+  { name: 'Django', logo: '/skills/django.png', percent: 73 },
 ];
 
 const Skills = () => {
-  const [loaded, setLoaded] = useState(false);
-  const rocketControls = useAnimation();
+  const { theme } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000);
-    return () => clearTimeout(timer);
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
-    const fly = async () => {
-      while (true) {
-        await rocketControls.start({
-          x: ['-100%', '100%'],
-          y: ['100%', '-100%'],
-          rotate: [0, 45],
-          transition: { duration: 4, ease: 'easeInOut' },
-        });
-        await rocketControls.set({ x: '-100%', y: '100%', rotate: 0 });
-      }
-    };
-    fly();
-  }, [rocketControls]);
+    if (inView && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [inView, hasAnimated]);
 
   return (
-    <section
-      id="skills"
-      className={`${styles.skillsSection} py-16 px-4`}
-    >
-      <h2 className={`${styles.skillsTitle} text-3xl font-bold mb-12 text-center`}>🚀 My Skills</h2>
-
-      {/* Flying Rocket Animation */}
-      <div className={styles.rocketAnimationWrapper}>
-        <motion.div
-          className="absolute w-16 h-16 z-10"
-          animate={rocketControls}
-        >
-          <Image src="/rocket.png" alt="Rocket" width={64} height={64} />
-        </motion.div>
-      </div>
-
-      {/* Skills Progress Bars */}
-      <div className="space-y-6 max-w-xl mx-auto mt-8 px-4">
-      {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className={styles.skillCard}>
-              <div className="flex justify-between mb-1 text-sm sm:text-base">
-                <div className={styles.skillTextWrapper}>
-                  <span className={styles.skillName}>{skill.name}</span>
+    <section className={styles.skillsSection} id="skills" ref={ref}>
+      <h2 className={styles.skillsTitle}>My Skills</h2>
+      <div className={styles.skillsGrid}>
+        {isLoading
+          ? Array(8)
+              .fill(null)
+              .map((_, idx) => (
+                <div key={idx} className={styles.placeholderCard}></div>
+              ))
+          : skills.map((skill, idx) => (
+              <motion.div
+                key={idx}
+                className={styles.skillCard}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * idx }}
+              >
+                <div className={styles.logoRing}>
+                  <svg className={styles.ringSvg}>
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="30"
+                      stroke="#e5e7eb"
+                      strokeWidth="6"
+                      fill="none"
+                    />
+                    <circle
+                      cx="50%"
+                      cy="50%"
+                      r="30"
+                      stroke="url(#grad)"
+                      strokeWidth="6"
+                      fill="none"
+                      strokeDasharray={188.4}
+                      strokeDashoffset={
+                        hasAnimated ? 188.4 - (188.4 * skill.percent) / 100 : 188.4
+                      }
+                      strokeLinecap="round"
+                      className={styles.progressRing}
+                      style={{ transition: 'stroke-dashoffset 1.5s ease-in-out' }}
+                    />
+                    <defs>
+                      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#06b6d4" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <Image
+                    src={skill.logo}
+                    alt={skill.name}
+                    width={40}
+                    height={40}
+                    className={styles.skillLogo}
+                  />
                 </div>
-                <span className={styles.skillLevel}>{skill.level}%</span>
-              </div>
-              <div className={styles.skillBarWrapper}>
-                <motion.div
-                  className={`${styles.skillBar}`}
-                  initial={{ width: 0 }}
-                  animate={{ width: loaded ? `${skill.level}%` : 0 }}
-                  transition={{ duration: 1 + index * 0.9 }}
-                />
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                <div className={styles.skillName}>{skill.name}</div>
+                <div className={styles.progressWrapper}>
+                  <div
+                    className={styles.progressBar}
+                    style={{
+                      width: hasAnimated ? `${skill.percent}%` : '0%',
+                    }}
+                  >
+                    <span className={styles.barPercentageInside}>{skill.percent}%</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
       </div>
+
+      {/* Rocket Animation */}
+      {inView && (
+        <div className={styles.rocketWrapper}>
+          <motion.div
+            className={styles.rocket}
+            animate={{ x: ['-100%', '100%'], y: ['100%', '-100%'] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: 'loop',
+              ease: 'easeInOut',
+            }}
+          >
+            🚀
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 };
