@@ -19,6 +19,9 @@ const skills = [
   { name: 'C++', logo: '/skills/cpp.png', percent: 80 },
   { name: 'Python', logo: '/skills/Py.png', percent: 88 },
   { name: 'Django', logo: '/skills/django.png', percent: 73 },
+  { name: 'node.js', logo: '/skills/node.png', percent: 85 },
+  { name: 'Express', logo: '/skills/express.png', percent: 90 },
+
 ];
 
 const Skills = () => {

@@ -1,46 +1,98 @@
+/* resume.module.css */
+
 .resumeSection {
-    min-height: 100vh;
-    background-color: #ffffff;
-    color: #1a202c;
-    padding: 4rem 1rem;
+  background-color: #f9fafb;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.downloadBtn:hover {
+  transform: scale(1.05);
+}
+
+.downloadBtn svg {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .resumeSection {
+    padding: 4rem 2rem;
   }
-  
-  .resumeSection.dark {
-    background-color: #1a202c;
-    color: #f7fafc;
-  }
-  
+
   .heading {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
   }
-  
+
   .description {
-    max-width: 640px;
-    text-align: center;
-    margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.6;
   }
-  
+}
+
+@media (max-width: 767px) {
   .downloadBtn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    background-color: #2563eb;
-    color: white;
-    font-weight: 500;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
   }
-  
-  .downloadBtn:hover {
-    background-color: #1e40af;
-    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.4);
-  }
-  
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-green-600 {
+  color: #16a34a;
+}
+
+.text-gray-700 {
+  color: #4b5563;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.bg-green-500 {
+  background-color: #10b981;
+}
+
+.bg-green-600 {
+  background-color: #059669;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}

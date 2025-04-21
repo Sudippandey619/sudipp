@@ -57,7 +57,7 @@ const Hero = () => {
               <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L4.854 7.646a.5.5 0 1 0-.708.708l3.5 3.5z"/>
             </svg>
           </a>
-          <a href="#contact" className={styles.talkBtn}>
+          <a href="#contact"  style={{ textDecoration: 'none' }} className={styles.talkBtn}>
             Let’s Talk  💬
           </a>
         </div>

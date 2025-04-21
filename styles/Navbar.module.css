@@ -1,10 +1,8 @@
-/* navbar.module.css */
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 10px 20px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -36,67 +34,56 @@
 }
 
 .navLink {
+  position: relative;
   font-size: 1rem;
   color: #6b21a8;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid transparent; /* Ensures a border is present */
-  border-radius: 9999px; /* Fully rounded look */
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease-in-out;
+  border-radius: 9999px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
   background: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: none;
 }
 
-/* Creating a rotating gradient border using the ::before pseudo-element */
+/* HOVER EFFECT ONLY */
 .navLink::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px; /* Fully rounded look */
+  inset: 0;
+  border-radius: 9999px;
+  padding: 2px;
   background: linear-gradient(45deg, #6b21a8, #9333ea, #bf00ff, #e347ff);
+  background-size: 300% 300%;
   z-index: -1;
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
-/* Hover with rotating gradient border & glow */
-.navLink:hover {
-  color: transparent;
-  background: linear-gradient(45deg, #0000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 10px #9333ea, 0 0 20px #9333ea, 0 0 30px #9333ea;
-}
-
-/* On hover, show the gradient border */
+/* Hover triggers gradient border */
 .navLink:hover::before {
   opacity: 1;
-  animation: rotate-gradient 6s linear infinite;
+  transform: scale(1);
+  animation: rotate-border 6s linear infinite;
 }
 
-/* Gradient border animation */
-@keyframes rotate-gradient {
+@keyframes rotate-border {
   0% {
-    background: linear-gradient(45deg, #6b21a8, #9333ea, #efa1e8, #fabcf7);
-  }
-  25% {
-    background: linear-gradient(135deg, #2121a8, #1120a9, #5440c5, #335eea);
-  }
+    background-position: 0% 50%;
+    background-color: #6b21a8 ,#9333ea,#ffff}
   50% {
-    background: linear-gradient(225deg, #ff00a2, #ea33a7, #e747cf, #f777ef);
-  }
-  75% {
-    background: linear-gradient(315deg, #a27afe, #6b21a8, #c187f7, #b3dfed);
+    background-position: 100% 50%;
+    background-color: #2b21a8,#3f33ea,#ffff;
   }
   100% {
-    background: linear-gradient(45deg, #6b21a8, #9333ea, #978aa3, #d1b2d5);
+    background-position: 0% 50%;
+    background-color: #a8212c,#ea3376,#ffff;
+
   }
 }
 

@@ -4,7 +4,8 @@ import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import styles from '../styles/Contact.module.css';
+import { motion } from 'framer-motion';
+import styles from '../styles/contact.module.css';
 
 const SERVICE_ID = 'your_service_id';
 const TEMPLATE_ID = 'your_template_id';
@@ -38,87 +39,84 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className={`${styles.contactSection} dark:${styles.dark}`}>
+    <section id="contact" className={styles.contactSection}>
       <ToastContainer />
-      
-      {/* Contact Me Heading */}
-      <h2 className={styles.heading}>Contact Me</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className={styles.contactWrapper}
+      >
+        <div className={styles.infoBox}>
+          <h3 className={styles.infoBoxTitle}>Get in Touch</h3>
+          <a href="tel:+9745348929" className={styles.contactLink}>📞 +9745348929</a>
+          <a href="mailto:sudippandey619@example.com" className={styles.contactLink}>📧 sudippandey619@example.com</a>
 
-      {/* Contact Form Section */}
-      <div className={`${styles.formContainer} dark:${styles.dark}`}>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className={styles.label}>Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className={`${styles.input} dark:${styles.dark}`}
-            />
+          <h3 className={styles.infoBoxTitle}>Connect with me</h3>
+          <div className={styles.socialIcons}>
+            <motion.a whileHover={{ scale: 1.1 }} href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram"></i>
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook"></i>
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1 }} href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-whatsapp"></i>
+            </motion.a>
           </div>
-
-          <div>
-            <label htmlFor="email" className={styles.label}>Email</label>
-            <input
-              type="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className={`${styles.input} dark:${styles.dark}`}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message" className={styles.label}>Message</label>
-            <textarea
-              name="message"
-              rows={5}
-              required
-              value={formData.message}
-              onChange={handleChange}
-              className={`${styles.textarea} dark:${styles.dark}`}
-            />
-          </div>
-
-          {error && <div className={styles.errorMessage}>{error}</div>}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className={styles.button}
-          >
-            {loading ? 'Sending...' : 'Send Message'}
-          </button>
-        </form>
-      </div>
-
-      {/* Get in Touch Section */}
-      <div className={styles.contactInfoBox}>
-        <h3>Get in Touch</h3>
-        <div className={styles.contactInfo}>
-          <a href="tel:+9745348929" className={styles.contactLink}>📞 Call</a>
-          <a href="mailto:sudippandey619@example.com" className={styles.contactLink}>📧 Email</a>
         </div>
-      </div>
 
-      {/* Social Media Links */}
-      <div className={styles.socialLinksBox}>
-        <h3>Connect with me</h3>
-        <div className={styles.socialLinks}>
-          <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram instagram"></i> {/* Instagram Icon */}
-          </a>
-          <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook facebook"></i> {/* Facebook Icon */}
-          </a>
-          <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-whatsapp whatsapp"></i> {/* WhatsApp Icon */}
-          </a>
+        <div className={styles.contactForm}>
+          <h2 className={styles.contactTitle}>Contact Me</h2>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.formGroup}>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className={styles.input}
+              />
+              <label className={styles.label}>Name</label>
+            </div>
+
+            <div className={styles.formGroup}>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className={styles.input}
+              />
+              <label className={styles.label}>Email</label>
+            </div>
+
+            <div className={styles.formGroup}>
+              <textarea
+                name="message"
+                rows={4}
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className={styles.textarea}
+              />
+              <label className={styles.label}>Message</label>
+            </div>
+
+            {error && <div className={styles.errorMessage}>{error}</div>}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className={styles.submitButton}
+            >
+              {loading ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
