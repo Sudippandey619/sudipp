@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar';  // Import react-calendar for a simple calendar
-import 'react-calendar/dist/Calendar.css'; // Import the default CSS for calendar
-import { motion } from 'framer-motion'; // For animations
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { motion } from 'framer-motion';
+
+// Define the expected calendar value type
+type CalendarValue = Date | [Date, Date] | null;
 
 const CalendarWithTime = () => {
-  const [date, setDate] = useState<Date | [Date, Date] | null>(new Date()); // State for the selected date (single date or range)
-  const [currentTime, setCurrentTime] = useState<string>(''); // State for live clock
+  const [date, setDate] = useState<CalendarValue>(new Date());
+  const [currentTime, setCurrentTime] = useState<string>('');
 
-  // Update the live clock every second
   useEffect(() => {
     const interval = setInterval(() => {
-      const time = new Date().toLocaleTimeString(); // Get current time in HH:MM:SS format
+      const time = new Date().toLocaleTimeString();
       setCurrentTime(time);
     }, 1000);
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+
+    return () => clearInterval(interval);
   }, []);
 
-  // Handle date changes, including date range
-  const handleDateChange = (newDate: Date | [Date, Date]) => {
+  const handleDateChange = (newDate: CalendarValue) => {
     setDate(newDate);
   };
 
@@ -28,25 +30,23 @@ const CalendarWithTime = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* Calendar */}
       <motion.div
         className="calendar-container"
         initial={{ y: -50 }}
         animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 25 }}
+        transition={{ type: 'spring', stiffness: 100, damping: 25 }}
       >
         <Calendar
-          onChange={handleDateChange} // Updates the selected date when clicked
-          value={date} // Displays the current selected date or range
+          onChange={handleDateChange}
+          value={date}
         />
       </motion.div>
 
-      {/* Live Clock with Hours, Minutes, and Seconds */}
       <motion.div
         className="clock-container"
         initial={{ x: 50 }}
         animate={{ x: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 25 }}
+        transition={{ type: 'spring', stiffness: 100, damping: 25 }}
       >
         <p className="clock">{currentTime}</p>
       </motion.div>
