@@ -49,7 +49,7 @@ const Contact = () => {
       >
         <div className={styles.infoBox}>
           <h3 className={styles.infoBoxTitle}>Get in Touch</h3>
-          <a href="tel:+9745348929" className={styles.contactLink}>📞 +9745348929</a>
+          <a href="tel:+9745348929" className={styles.contactLink}>📞 +9779745348929</a>
           <a href="mailto:sudippandey619@example.com" className={styles.contactLink}>📧 sudippandey619@example.com</a>
 
           <h3 className={styles.infoBoxTitle}>Connect with me</h3>
