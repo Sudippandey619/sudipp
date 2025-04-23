@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* Tawk.to Chatbot Script */}
+          {/* Twak Chat bot  */}
           <script
             type="text/javascript"
             dangerouslySetInnerHTML={{
