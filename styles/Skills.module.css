@@ -1,60 +1,104 @@
-/* Section Container */
+/* === Updated Skills.module.css === */
+
 .skillsSection {
-  padding: 4rem 2rem;
-  background: radial-gradient(ellipse at top left, #060d1b, #37205c);
+  position: relative;
+  padding: 5rem 1rem;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #020617; /* deep space */
+}
+
+.skillsTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  z-index: 2;
+  position: relative;
+  font-weight: 700;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  z-index: 1;
   position: relative;
 }
 
-.skillsSection.dark {
-  background-color: #1a202c;
-}
-
-/* Title Styling */
-.skillsTitle {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: #1f2937;
-}
-
-.skillsTitle.dark {
-  color: #e5e7eb;
-}
-
-/* Grid Layout */
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Individual Skill Card */
 .skillCard {
-  background-color: white;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 16px rgba(91, 87, 87, 0.05);
+  
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+.skillLogo {
+  position: absolute;
+  overflow: hidden;
+  
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.skillName {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.progressWrapper {
+  margin-top: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(to right, #0ff, #3b82f6);
+  transition: width 1.5s ease;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  transition: transform 0.2s ease;
+  justify-content: flex-end;
+  padding-right: 5px;
 }
 
-.skillCard.dark {
-  background-color: #2d3748;
+.barPercentageInside {
+  font-size: 0.75rem;
+  color: rgb(218, 214, 214);
+  font-weight: bold;
 }
 
-.skillCard:hover {
-  transform: translateY(-4px);
+.placeholderCard {
+  height: 180px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  animation: pulse 1.2s infinite ease-in-out;
 }
 
-/* Circular Progress Ring Container */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
 .logoRing {
   position: relative;
   width: 80px;
   height: 80px;
-  margin-bottom: 1rem;
+  margin: 0 auto;
 }
 
 .ringSvg {
@@ -66,134 +110,119 @@
   transform: rotate(-90deg);
 }
 
-.skillLogo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  z-index: 1;
+.progressRing {
+  transition: stroke-dashoffset 1.5s ease-in-out;
 }
 
-/* Skill Name Below Logo */
-.skillName {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  color: #1f2937;
-}
-
-.skillName.dark {
-  color: #e5e7eb;
-}
-
-/* Progress Bar Container */
-.progressWrapper {
-  position: relative;
-  width: 100%;
-  height: 16px;
-  background-color: #e5e7eb;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 8px;
-}
-
-.progressWrapper.dark {
-  background-color: #e5eaf2;
-}
-
-/* Inner Progress Bar with Transition */
-.progressBar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 8px;
-  box-sizing: border-box;
-  transition: width 1.5s ease-in-out;
-}
-
-/* Percentage Text Inside the Bar */
-.barPercentageInside {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-/* Placeholder Shimmer Animation */
-.placeholderCard {
-  height: 150px;
-  border-radius: 16px;
-  background: linear-gradient(
-    to right,
-    #f0f0f0 8%,
-    #e0e0e0 18%,
-    #f0f0f0 33%
-  );
-  background-size: 1000px 100%;
-  animation: shimmer 1.3s infinite linear forwards;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-/* Rocket Animation Wrapper */
 .rocketWrapper {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  z-index: 2;
-  width: 100%; /* Ensure it's on the full width of the screen */
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 20;
 }
 
-/* Rocket Movement */
 .rocket {
-  font-size: 2rem;
-  animation: rocket 3s infinite ease-in-out;
+  width: 120px;
+  height: 120px;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  animation: diagonalFly 4s ease-in-out forwards;
 }
 
-@keyframes rocket {
+@keyframes diagonalFly {
   0% {
-    transform: translate(-100%, 100%); /* Start off-screen at bottom left */
+    transform: translate(-60px, 100vh);
   }
   100% {
-    transform: translate(100vw, -100vh); /* Move to top right corner */
+    transform: translate(100vw, -60px);
   }
 }
 
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-  .skillsSection {
-    background-color: #e2e5ec;
-  }
+.rocketWithFire {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-  .skillsTitle {
-    color: #e5e7eb;
-  }
+.fireTrail {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+}
 
-  .skillCard {
-    background-color: #2d3748;
-  }
+.cloudTrail {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(6px);
+  left: 50%;
+  bottom: -25px;
+  animation: pulseCloud 1.5s infinite ease-in-out;
+}
 
-  .skillName {
-    color: #e5e7eb;
-  }
+@keyframes pulseCloud {
+  0%, 100% { transform: scale(1) translateX(-50%); }
+  50% { transform: scale(1.4) translateX(-50%); }
+}
 
-  .progressWrapper {
-    background-color: #717274;
+.cosmicBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #0d1b2a 0%, #020617 80%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.starParticle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: rise 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
   }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0.1;
+  }
+}
+
+/* Mute/Unmute Buttons */
+.audioControls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 30;
+}
+
+.audioButton {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.audioButton:hover {
+  background: rgba(0, 0, 0, 0.8);
 }

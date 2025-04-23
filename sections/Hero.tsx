@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/hero.module.css';
 import { motion } from 'framer-motion';
 
-const roles = ['React Developer', 'Freelancer', 'Tech Enthusiast', 'Next.js Lover'];
+const roles = ['MERN Developer', 'Freelancer', 'Tech Enthusiast', 'Node.js Lover',' currently learning BSc CSIT'];
 
 const Hero = () => {
   const [text, setText] = useState('');
