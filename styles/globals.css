@@ -109,3 +109,23 @@ body {
   --bg: #1e1e1e;
   --text: #f1f1f1;
 }
+:root {
+  --navbar-bg: #fff;
+  --text-color: #333;
+  --hover-color: #9333ea;
+}
+
+body.dark:root {
+  --navbar-bg: #1c1c1c;
+  --text-color: #fff;
+  --hover-color: #7c4dff;
+}
+[data-theme='dark'] .calendarContainer,
+[data-theme='dark'] .clockContainer {
+  background: rgba(30, 30, 30, 0.3);
+  color: #fff;
+}
+
+[data-theme='dark'] .clock {
+  color: #fff;
+}

@@ -1,6 +1,6 @@
 .contactSection {
   padding: 3rem 1rem;
-  background-color: #f9fafb;
+  background: radial-gradient(ellipse at top left, #060d1b, #180e28);
 }
 
 .dark .contactSection {
@@ -11,14 +11,14 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: #ffffff;
+  background: radial-gradient(ellipse at top left, #060d1b, #342252);
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(179, 177, 177, 0.1);
 }
 
 .dark .contactWrapper {
-  background-color: #2d3748;
+  background-color: #8d9096;
   color: #edf2f7;
 }
 
@@ -29,7 +29,7 @@
 .infoBoxTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2d3748;
+  text-shadow: 0 0 5px #c9eeee;
   margin-bottom: 1rem;
 }
 
@@ -39,7 +39,7 @@
 
 .contactLink {
   display: block;
-  color: #4a5568;
+  color: #9fa2a8;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   text-decoration: none;
@@ -47,7 +47,7 @@
 }
 
 .contactLink:hover {
-  color: #3182ce;
+  color: #58a1e6;
 }
 
 .socialIcons {
@@ -58,8 +58,12 @@
 }
 
 .socialIcons a {
-  color: #4a5568;
-  transition: color 0.2s ease, transform 0.2s ease;
+  text-shadow: 
+  0 0 5px #b6dfdf, 
+  0 0 10px #2563eb;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: whitesmoke;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .dark .socialIcons a {
@@ -79,7 +83,7 @@
   font-size: 1.75rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #2d3748;
+  color: #ffff;
   text-align: center;
 }
 
@@ -97,7 +101,7 @@
   width: 100%;
   padding: 1.25rem 1rem 0.5rem;
   font-size: 0.95rem;
-  background-color: #f7fafc;
+  background: radial-gradient(ellipse at top left, #7391cd, #9c7ecc);
   border: 1px solid #cbd5e0;
   border-radius: 0.5rem;
   outline: none;
@@ -106,8 +110,8 @@
 
 .dark .input,
 .dark .textarea {
-  background-color: #4a5568;
-  border-color: #a0aec0;
+  background-color: #6c86b1;
+  border-color: #d8dee6;
   color: #edf2f7;
 }
 

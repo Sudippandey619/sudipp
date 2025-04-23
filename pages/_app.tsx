@@ -1,6 +1,7 @@
 // _app.tsx
 // import { ThemeProvider } from 'next-themes';
 import '../styles/globals.css';  
+import '../styles/Navbar.module.css';
 import { AppProps } from 'next/app';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -18,6 +19,7 @@ function App({ Component, pageProps }: AppProps) {
           
 
         </main>
+        
       </div>
    
   );

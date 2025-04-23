@@ -1,9 +1,11 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { motion } from 'framer-motion';
+import Style from '../styles/Calender.module.css';
 
-// Define the expected calendar value type
 type CalendarValue = Date | [Date, Date] | null;
 
 const CalendarWithTime = () => {
@@ -25,13 +27,13 @@ const CalendarWithTime = () => {
 
   return (
     <motion.div
-      className="calendar-time-container"
+      className={Style.calendarTimeContainer}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <motion.div
-        className="calendar-container"
+        className={Style.calendarContainer}
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 25 }}
@@ -43,12 +45,12 @@ const CalendarWithTime = () => {
       </motion.div>
 
       <motion.div
-        className="clock-container"
+        className={Style.clockContainer}
         initial={{ x: 50 }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', stiffness: 100, damping: 25 }}
       >
-        <p className="clock">{currentTime}</p>
+        <p className={Style.clock}>{currentTime}</p>
       </motion.div>
     </motion.div>
   );

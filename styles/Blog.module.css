@@ -1,12 +1,12 @@
 .blogSection {
     min-height: 100vh;
-    background-color: #ffffff;
-    color: #1a202c;
+    background: radial-gradient(ellipse at top left, #060d1b, #37205c);
+    color: #dfe5f0;
     padding: 4rem 1rem;
   }
   
   .blogSection.dark {
-    background-color: #1a202c;
+    background: radial-gradient(ellipse at top left, #060d1b, #342252);
     color: #f7fafc;
   }
   
@@ -18,7 +18,7 @@
   }
   
   .post {
-    background-color: #f9fafb;
+    background: radial-gradient(ellipse at top left, #3c2776, #35254f);
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);

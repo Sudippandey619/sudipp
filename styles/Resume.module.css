@@ -1,22 +1,22 @@
 /* resume.module.css */
 
 .resumeSection {
-  background-color: #f9fafb;
+  background: radial-gradient(ellipse at top left, #060d1b, #37205c);
   padding: 3rem 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(208, 203, 203, 0.1);
 }
 
 .heading {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #ecebeb;
   margin-bottom: 1.5rem;
 }
 
 .description {
   font-size: 1rem;
-  color: #555;
+  color: #a59e9e;
   max-width: 800px;
   margin: 0 auto 2rem;
   line-height: 1.5;
@@ -74,15 +74,15 @@
 }
 
 .text-gray-700 {
-  color: #4b5563;
+  color: #b9bcbf;
 }
 
 .bg-blue-500 {
-  background-color: #3b82f6;
+  background-color: #5e96ef;
 }
 
 .bg-blue-600 {
-  background-color: #2563eb;
+  background-color: #98b1e7;
 }
 
 .bg-green-500 {

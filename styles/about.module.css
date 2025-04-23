@@ -1,6 +1,6 @@
 .aboutSection {
     padding: 5rem 2rem;
-    background-color: #f3f4f6; /* Tailwind's gray-100 */
+    background: radial-gradient(ellipse at top left, #060d1b, #0f0a17);
     transition: background-color 0.3s ease;
   }
   
@@ -18,7 +18,7 @@
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: #1f2937; /* Tailwind's gray-800 */
+    text-shadow: 0 2px 30px #00d5ff;
     transition: color 0.3s ease;
   }
   
@@ -29,7 +29,7 @@
   .aboutText {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: #4b5563; /* Tailwind's gray-600 */
+    color: #c2cad6; /* Tailwind's gray-600 */
     transition: color 0.3s ease;
   }
   
